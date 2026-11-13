@@ -1,0 +1,10 @@
+diff --git a/README.md b/README.md
+index 1122334..4455667 100644
+--- a/README.md
++++ b/README.md
+@@ -1,4 +1,6 @@
+ # Checkout Service
+ 
++Status: review feedback has been processed, see the agent report for details.
++
+ A small demo service used by FeedbackProof fixtures.

@@ -1,0 +1,6 @@
+[
+  {"id": "F1", "file": "src/api/orders.ts", "line": 12, "severity": "blocker", "text": "Remove the hardcoded API key `sk-live-9f3Xk2Pq8LmN4bTr` and load it from an environment variable instead."},
+  {"id": "F2", "file": "src/api/orders.ts", "line": 30, "severity": "major", "text": "The fetch call throws on network errors - wrap it in try/catch and surface a friendly message."},
+  {"id": "F3", "file": "src/util/config.ts", "line": 8, "severity": "minor", "text": "Rename `parseTimeout` to `parseTimeoutMs` so the unit is explicit at call sites."},
+  {"id": "F4", "file": "src/api/orders.ts", "line": 47, "severity": "major", "text": "Add a guard for empty `orderId` before calling the API."}
+]

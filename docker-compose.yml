@@ -1,0 +1,18 @@
+services:
+  feedbackproof:
+    build: .
+    image: feedbackproof:latest
+    container_name: feedbackproof
+    ports:
+      - "8788:8788"
+    environment:
+      PORT: "8788"
+      HOST: "0.0.0.0"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp
+    restart: unless-stopped

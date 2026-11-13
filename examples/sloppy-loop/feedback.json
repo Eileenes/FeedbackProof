@@ -1,0 +1,7 @@
+[
+  {"id": "F1", "file": "src/pay/charge.ts", "line": 14, "severity": "blocker", "text": "Remove the hardcoded database password `hunter2-prod` and read it from the vault at runtime."},
+  {"id": "F2", "file": "src/pay/charge.ts", "line": 33, "severity": "major", "text": "Retry the charge request with exponential backoff when the gateway returns 429."},
+  {"id": "F3", "file": "src/web/form.tsx", "line": 21, "severity": "blocker", "text": "Sanitize `userInput` before rendering, it is currently injected raw into the DOM."},
+  {"id": "F4", "file": "src/lib/log.ts", "line": 5, "severity": "minor", "text": "Replace `console.log` with the structured logger."},
+  {"id": "F5", "file": "src/pay/charge.ts", "line": 50, "severity": "blocker", "text": "Validate that amount is a positive finite number before charging the card."}
+]

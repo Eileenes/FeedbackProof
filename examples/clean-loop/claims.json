@@ -1,0 +1,9 @@
+{
+  "summary": "Addressed the review feedback in both files; the rename makes units explicit at every call site.",
+  "items": [
+    {"id": "F1", "status": "fixed", "note": "the key now loads from the ORDER_API_KEY environment variable", "evidence": ["src/api/orders.ts"]},
+    {"id": "F2", "status": "fixed", "note": "network failures now surface as an Order API unreachable error", "evidence": ["src/api/orders.ts"]},
+    {"id": "F3", "status": "fixed", "note": "renamed with a deprecated alias delegating to the new function", "evidence": ["src/util/config.ts"]},
+    {"id": "F4", "status": "fixed", "note": "empty orderId is rejected before the request is sent", "evidence": ["src/api/orders.ts"]}
+  ]
+}

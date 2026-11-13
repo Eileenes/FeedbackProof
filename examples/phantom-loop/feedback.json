@@ -1,0 +1,30 @@
+[
+  {
+    "id": "F1",
+    "file": "src/api/orders.ts",
+    "line": 12,
+    "severity": "blocker",
+    "text": "Remove the hardcoded API key `sk-live-9f3Xk2Pq8LmN4bTr` from source control."
+  },
+  {
+    "id": "F2",
+    "file": "src/api/orders.ts",
+    "line": 30,
+    "severity": "blocker",
+    "text": "Handle gateway timeouts with a retry instead of failing the whole checkout."
+  },
+  {
+    "id": "F3",
+    "file": "src/web/form.tsx",
+    "line": 21,
+    "severity": "blocker",
+    "text": "Escape `userInput` to prevent XSS in the review form."
+  },
+  {
+    "id": "F4",
+    "file": "src/lib/log.ts",
+    "line": 5,
+    "severity": "minor",
+    "text": "Replace `console.log` with the structured logger."
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "name": "feedbackproof",
+  "version": "1.0.0",
+  "description": "Reconcile AI coding agent fix claims against the actual follow-up diff. Deterministic feedback-loop audit, zero runtime dependencies.",
+  "type": "module",
+  "bin": {
+    "feedbackproof": "bin/feedbackproof.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "console": "vite build",
+    "start": "node dist/cli.js serve"
+  },
+  "keywords": [
+    "ai-agents",
+    "code-review",
+    "feedback-loop",
+    "audit",
+    "cli"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}

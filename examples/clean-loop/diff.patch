@@ -1,0 +1,39 @@
+diff --git a/src/api/orders.ts b/src/api/orders.ts
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/api/orders.ts
++++ b/src/api/orders.ts
+@@ -10,9 +10,13 @@ export async function createOrder(payload: OrderPayload): Promise<Order> {
+   const url = `${API_BASE}/orders`;
+-  const apiKey = "sk-live-9f3Xk2Pq8LmN4bTr";
+-  const headers = { "Authorization": `Bearer ${apiKey}` };
++  const apiKey = process.env.ORDER_API_KEY;
++  if (!apiKey) throw new Error("ORDER_API_KEY is not configured");
++  const headers = { "Authorization": `Bearer ${apiKey}` };
+   const init = { method: "POST", headers, body: JSON.stringify(payload) };
+-  const resp = await fetch(url, init);
++  let resp: Response;
++  try {
++    resp = await fetch(url, init);
++  } catch (err) {
++    throw new Error(`Order API unreachable: ${String(err)}`);
++  }
+@@ -45,6 +49,9 @@ export async function getOrder(orderId: string): Promise<Order> {
+   const url = `${API_BASE}/orders/${orderId}`;
+-  const resp = await fetch(url);
++  if (!orderId) {
++    throw new Error("orderId is required");
++  }
++  const resp = await fetch(url);
+   return resp.json() as Promise<Order>;
+ }
+diff --git a/src/util/config.ts b/src/util/config.ts
+index 9a8b7c6..0f1e2d3 100644
+--- a/src/util/config.ts
++++ b/src/util/config.ts
+@@ -6,7 +6,8 @@ export interface HttpConfig {
+   retries: number;
+ }
+-export function parseTimeout(raw: string): number {
++export function parseTimeoutMs(raw: string): number {
+   return Number(raw) * 1000;
+ }

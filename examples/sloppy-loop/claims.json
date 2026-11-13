@@ -1,0 +1,10 @@
+{
+  "summary": "All feedback items are fully resolved.",
+  "items": [
+    {"id": "F1", "status": "fixed", "note": "db password moved to the vault", "evidence": ["src/pay/charge.ts"]},
+    {"id": "F2", "status": "fixed", "note": "retries on 429 with exponential backoff", "evidence": ["src/pay/charge.ts"]},
+    {"id": "F3", "status": "partial", "note": "userInput is partially sanitized, needs another pass", "evidence": ["src/web/form.tsx"]},
+    {"id": "F4", "status": "wontfix"},
+    {"id": "F5", "status": "deferred", "reason": "next sprint"}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "summary": "All 4 items are fully fixed and verified.",
+  "items": [
+    {"id": "F1", "status": "fixed", "note": "key removed from source", "evidence": ["src/api/orders.ts"]},
+    {"id": "F2", "status": "fixed", "note": "retry added to the gateway client", "evidence": ["src/api/gateway.ts"]},
+    {"id": "F3", "status": "fixed", "note": "userInput escaped on render", "evidence": ["src/web/form.tsx"]},
+    {"id": "F4", "status": "fixed", "note": "logger swap complete", "evidence": ["src/lib/log.ts"]}
+  ]
+}
